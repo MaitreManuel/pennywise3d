@@ -10,6 +10,7 @@ if (process.env.NODE_ENV === 'production') plugins.push(new UglifyJsPlugin());
 
 module.exports = {
     entry: './src/application.js',
+    devtool: 'eval-source-map',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
