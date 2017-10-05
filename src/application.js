@@ -46,7 +46,7 @@ floor.receiveShadow = true;
 
 const pennywise = Pennywise(THREE);
 
-camera.position.z = 255;
+camera.position.z = 55;
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.shadowMap.enabled = true;
 document.body.appendChild( renderer.domElement );
