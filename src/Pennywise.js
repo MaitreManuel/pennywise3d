@@ -42,22 +42,22 @@ export default THREE => {
     var eyelid_leftShape = new THREE.Shape();
 
     eyelid_leftShape.moveTo(-6.6, 2);
-    eyelid_leftShape.bezierCurveTo(-5, 7, 3, 2, 0, -1);
+    eyelid_leftShape.bezierCurveTo(-5, 7.5, 3, 2, 0, -1);
 
     const eyelid_left = new THREE.Mesh(new THREE.ShapeGeometry(eyelid_leftShape), black);
 
     group_eye_left.add(eyelid_left);
-    eyelid_left.position.set(3.4, -0.5, .6);
+    eyelid_left.position.set(3.4, -0.5, .5);
 
     var eyelid_rightShape = new THREE.Shape();
 
     eyelid_rightShape.moveTo(-4.6, -1);
-    eyelid_rightShape.bezierCurveTo(-7, 6, 1, 5, 1.5, 3);
+    eyelid_rightShape.bezierCurveTo(-7, 6.5, 1, 5, 1.5, 3);
 
     const eyelid_right = new THREE.Mesh(new THREE.ShapeGeometry(eyelid_rightShape), black);
 
     group_eye_right.add(eyelid_right);
-    eyelid_right.position.set(1.4, -1, .6);
+    eyelid_right.position.set(1.4, -1, .5);
 
     // ******************** //
 
@@ -132,9 +132,92 @@ export default THREE => {
     // ******* MOUTH ******* //
 
     const mouth = new THREE.Group();
-    const back_mouth = new THREE.Mesh(new THREE.PlaneGeometry(8, 4), black);
+    const back_mouth1 = new THREE.Mesh(new THREE.PlaneGeometry(7.5, 3), black);
+    const back_mouth2 = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), black);
+    const back_mouth3 = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), black);
+    const teeth1 = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.5, 2.5), white);
+    const teeth2 = new THREE.Mesh(new THREE.BoxGeometry(1.1, 1.5, 2.5), white);
 
-    mouth.add(back_mouth);
+    mouth.add(back_mouth1);
+    mouth.add(back_mouth2);
+    back_mouth2.position.x = -4.25;
+    back_mouth2.position.y = 1.5;
+    mouth.add(back_mouth3);
+    back_mouth3.position.x = 4.25;
+    back_mouth3.position.y = 1.5;
+    mouth.add(teeth1);
+    teeth1.position.x = .75;
+    teeth1.position.y = .25;
+    mouth.add(teeth2);
+    teeth2.position.x = -.75;
+    teeth2.position.y = .25;
+
+    const lips = new THREE.Group();
+    const up_lips = new THREE.Mesh(new THREE.BoxGeometry(6, 1, 2.5), red);
+    const down_lips = new THREE.Mesh(new THREE.BoxGeometry(6, 1, 2.5), red);
+    const left_lips1 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const left_lips2 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const left_lips3 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const left_lips4 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const left_lips5 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const left_lips6 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const left_lips7 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips1 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips2 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips3 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips4 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips5 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips6 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+    const right_lips7 = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 2.5), red);
+
+    lips.add(up_lips);
+    up_lips.position.y = 1.5;
+    lips.add(down_lips);
+    down_lips.position.y = -2;
+    lips.add(left_lips1);
+    left_lips1.position.x = -3.5;
+    left_lips1.position.y = 2;
+    lips.add(left_lips2);
+    left_lips2.position.x = -4.5;
+    left_lips2.position.y = 2.5;
+    lips.add(left_lips3);
+    left_lips3.position.x = -3.25;
+    left_lips3.position.y = -1;
+    lips.add(left_lips4);
+    left_lips4.position.x = -4;
+    left_lips4.position.y = 0;
+    lips.add(left_lips5);
+    left_lips5.position.x = -4.75;
+    left_lips5.position.y = 1;
+    lips.add(left_lips6);
+    left_lips6.position.x = -5.5;
+    left_lips6.position.y = 2;
+    lips.add(left_lips7);
+    left_lips7.position.x = -5.5;
+    left_lips7.position.y = 2.5;
+    lips.add(right_lips1);
+    right_lips1.position.x = 3.5;
+    right_lips1.position.y = 2;
+    lips.add(right_lips2);
+    right_lips2.position.x = 4.5;
+    right_lips2.position.y = 2.5;
+    lips.add(right_lips3);
+    right_lips3.position.x = 3.25;
+    right_lips3.position.y = -1;
+    lips.add(right_lips4);
+    right_lips4.position.x = 4;
+    right_lips4.position.y = 0;
+    lips.add(right_lips5);
+    right_lips5.position.x = 4.75;
+    right_lips5.position.y = 1;
+    lips.add(right_lips6);
+    right_lips6.position.x = 5.5;
+    right_lips6.position.y = 2;
+    lips.add(right_lips7);
+    right_lips7.position.x = 5.5;
+    right_lips7.position.y = 2.5;
+
+    mouth.add(lips);
 
     // ********************* //
 
